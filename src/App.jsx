@@ -1,11 +1,10 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Search from './pages/Search';
-import MovieDetails from './pages/MovieDetails';
-import Collection from './pages/Collection';
+import Navbar from './components/Navbar.jsx';
+import Home from './pages/Home.jsx';
+import Search from './pages/Search.jsx';
+import MovieDetails from './pages/MovieDetails.jsx';
+import Collection from './pages/Collection.jsx';
 import './App.css';
 
 function App() {

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Search() {
@@ -13,7 +12,7 @@ function Search() {
     useEffect(() => {
     const fetchSavedMovies = async () => {
         try {
-        const response = await axios.get('http://localhost:5173/api/movies');
+        const response = await axios.get('http://localhost:3001/api/movies');
         const imdbIds = response.data.map(movie => movie.imdbID);
         setSavedMovies(imdbIds);
         } catch (error) {
@@ -66,7 +65,7 @@ function Search() {
         };
 
       // Save to database
-        await axios.post('http://localhost:5000/api/movies', movieData);
+        await axios.post('http://localhost:3001/api/movies', movieData);
 
       // Update state
         setSavedMovies([...savedMovies, movie.imdbID]);

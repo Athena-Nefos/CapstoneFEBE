@@ -18,7 +18,7 @@ function MovieDetails() {
     useEffect(() => {
     const fetchMovieDetails = async () => {
         try {
-        const response = await axios.get(`http://localhost:5173/api/movies/${id}`);
+        const response = await axios.get(`http://localhost:3001/api/movies/${id}`);
         setMovie(response.data);
         setFormData({
             rating: response.data.rating,
@@ -48,7 +48,7 @@ function MovieDetails() {
     e.preventDefault();
     
     try {
-        const response = await axios.put(`http://localhost:5173/api/movies/${id}`, formData);
+        const response = await axios.put(`http://localhost:3001/api/movies/${id}`, formData);
         setMovie({...movie, ...response.data});
         setIsEditing(false);
     } catch (error) {
@@ -59,7 +59,7 @@ function MovieDetails() {
     const handleDelete = async () => {
     if (window.confirm('Are you sure you want to remove this movie from your collection?')) {
         try {
-        await axios.delete(`http://localhost:5173/api/movies/${id}`);
+        await axios.delete(`http://localhost:3001/api/movies/${id}`);
         navigate('/collection');
         } catch (error) {
         console.error('Error deleting movie:', error);

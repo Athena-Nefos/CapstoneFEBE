@@ -10,7 +10,7 @@ function Home() {
     useEffect(() => {
     const fetchData = async () => {
         try {
-        const response = await axios.get('http://localhost:5173/api/movies');
+        const response = await axios.get('http://localhost:3001/api/movies');
         const allMovies = response.data;
         
         // Get recent additions

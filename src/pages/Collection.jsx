@@ -10,7 +10,7 @@ function Collection() {
     useEffect(() => {
     const fetchCollection = async () => {
         try {
-        const response = await axios.get('http://localhost:5173npm/api/movies');
+        const response = await axios.get('http://localhost:3001npm/api/movies');
         setMovies(response.data);
         } catch (error) {
         console.error('Error fetching collection:', error);
