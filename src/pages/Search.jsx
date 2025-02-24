@@ -8,6 +8,8 @@ function Search() {
     const [error, setError] = useState(null);
     const [savedMovies, setSavedMovies] = useState([]);
     
+    const YOUR_API_KEY = import.meta.env.VITE_API_KEY;
+
   // Fetch already saved movies to check against search results
     useEffect(() => {
     const fetchSavedMovies = async () => {
@@ -29,7 +31,7 @@ function Search() {
     setError(null);
     
     try {
-        const response = await axios.get(`http://www.omdbapi.com/?s=${query}&apikey=YOUR_API_KEY`);
+        const response = await axios.get(`http://www.omdbapi.com/?s=${query}&apikey=${YOUR_API_KEY}`);
         
         if (response.data.Response === 'True') {
         setSearchResults(response.data.Search);
@@ -49,7 +51,7 @@ function Search() {
     try {
       // Get additional details from OMDB API
         const detailsResponse = await axios.get(
-        `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=YOUR_API_KEY`
+        `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${YOUR_API_KEY}`
         );
 
         const movieData = {
