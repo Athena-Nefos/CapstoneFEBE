@@ -33,6 +33,10 @@ body {
   display: flex;
 }
 
+.app-container {
+  display: flex;
+}
+
 /* Navbar Styles */
 .navbar {
   background-color: var(--secondary-color);
