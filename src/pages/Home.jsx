@@ -68,8 +68,8 @@ function Home() {
     return (
         <div className="home-container">
             <section className="welcome-section">
-                <h1>Movie Night Planner</h1>
-                <p>Organize your perfect movie night with friends and family</p>
+                <h1 className="header1">Movie Night Planner</h1>
+                <p className="header1">Organize your perfect movie night with friends and family</p>
                 <div className="action-buttons">
                     <Link to="/search" className="btn btn-primary">Find Movies</Link>
                     <Link to="/collection" className="btn btn-secondary">View Collection</Link>
